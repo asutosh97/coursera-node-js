@@ -1,0 +1,16 @@
+{
+  "name": "week1",
+  "version": "1.0.0",
+  "description": "Simple implementation of REST in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Asutosh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "morgan": "^1.7.0"
+  }
+}
