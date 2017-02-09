@@ -1,7 +1,6 @@
 var mongoose = require('mongoose'),
-    assert = require('assert');
-
-var Promotions = require('./promotions');
+    assert = require('assert'),
+    Leaders = require('./leadership');
 
 // Connection URL
 var url = 'mongodb://localhost:27017/conFusion';
@@ -12,23 +11,23 @@ db.once('open', function () {
     // we're connected!
     console.log("Connected correctly to server");
 
-    // create a new promotion
-    Promotions.create(  {
-      "name": "BCDE",
-      "image": "images/buffet.png",
-      "label": "New",
-      "price": "19.99",
-      "description": "Featuring . . ."
-    }, function (err, promotion) {
+    // create a new leader
+    Leaders.create({
+      "name": "Peter Pan",
+      "image": "images/alberto.png",
+      "designation": "Chief Epicurious Officer",
+      "abbr": "CEO",
+      "description": "Our CEO, Peter, . . ."
+    }, function (err, leader) {
         if (err) throw err;
-        console.log('Dish created!');
-        console.log(promotion);
+        console.log('Leader created!');
+        console.log(leader);
 
-        var id = promotion._id;
+        var id = leader._id;
 
-        // get all the promotions
+        // get all the leaders
         setTimeout(function () {
-            Promotions.findByIdAndUpdate(id, {
+            Leaders.findByIdAndUpdate(id, {
                     $set: {
                         description: 'Updated Test'
                     }
